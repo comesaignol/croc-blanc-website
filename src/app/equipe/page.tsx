@@ -12,7 +12,7 @@ const practitioners = [
     title: "Chirurgien-Dentiste — Fondateur",
     specialty: "Implantologie & Esthétique dentaire",
     image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    bio: "Biographie à venir.",
     formations: [
       "Doctorat en Chirurgie Dentaire — Université [Ville]",
       "DU d'Implantologie — Université [Ville]",
@@ -25,7 +25,7 @@ const practitioners = [
     title: "Chirurgien-Dentiste — Associée",
     specialty: "Orthodontie & Parodontologie",
     image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    bio: "Biographie à venir.",
     formations: [
       "Doctorat en Chirurgie Dentaire — Université [Ville]",
       "DU d'Orthodontologie — Université [Ville]",
@@ -74,7 +74,7 @@ export default function EquipePage() {
       <div className="container-site mb-24">
         <div className="flex flex-col gap-16">
           {practitioners.map((p, i) => (
-            <div key={p.name} className={`grid lg:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
+            <div key={i} className={`grid lg:grid-cols-2 gap-12 items-start ${i % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
               <div className={i % 2 === 1 ? "lg:col-start-2" : ""}>
                 <div
                   className="h-96 bg-cover bg-center bg-top"
@@ -82,7 +82,7 @@ export default function EquipePage() {
                 />
               </div>
               <div className={i % 2 === 1 ? "lg:col-start-1" : ""}>
-                <p className="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-2">{p.specialty}</p>
+                <p className="section-label">{p.specialty}</p>
                 <h2 className="font-serif text-3xl text-navy mb-1">{p.name}</h2>
                 <p className="text-muted text-sm mb-6">{p.title}</p>
                 <div className="h-0.5 w-10 bg-gold mb-6" />
@@ -117,8 +117,8 @@ export default function EquipePage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            {support.map((member) => (
-              <div key={member.name} className="text-center">
+            {support.map((member, i) => (
+              <div key={i} className="text-center">
                 <div
                   className="w-32 h-32 rounded-full bg-cover bg-center mx-auto mb-4 border-4 border-white shadow-lg"
                   style={{ backgroundImage: `url('${member.image}')` }}

@@ -53,7 +53,7 @@ const services = [
     description:
       "Gingivites, maladies parodontales — nous traitons les pathologies des gencives pour protéger vos dents sur le long terme.",
     image: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80",
-    href: "/soins",
+    href: "/soins/parodontologie",
     tag: "Prévention",
   },
 ];

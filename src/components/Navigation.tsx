@@ -16,6 +16,7 @@ const navLinks = [
       { label: "Esthétique dentaire", href: "/soins/esthetique" },
       { label: "Chirurgie buccale", href: "/soins/chirurgie" },
       { label: "Soins conservateurs", href: "/soins/conservateurs" },
+      { label: "Parodontologie", href: "/soins/parodontologie" },
     ],
   },
   { label: "Technologies", href: "/technologies" },
@@ -26,12 +27,12 @@ const navLinks = [
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -44,7 +45,7 @@ export default function Navigation() {
       {/* Top bar */}
       <div className="bg-navy text-white text-xs py-2 hidden md:block">
         <div className="container-site flex justify-between items-center">
-          <span className="text-white/60">Cabinet dentaire — Lun–Ven : 8h30–19h · Sam : 9h–13h</span>
+          <span className="text-white/60">Cabinet dentaire — Lun–Jeu : 8h30–19h · Ven : 8h30–18h · Sam : 9h–13h</span>
           <div className="flex items-center gap-6">
             <a
               href="tel:+33400000000"
@@ -52,14 +53,6 @@ export default function Navigation() {
             >
               <Phone size={12} />
               <span>04 XX XX XX XX</span>
-            </a>
-            <a
-              href="https://www.doctolib.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gold text-white px-3 py-1 text-xs font-semibold tracking-wider uppercase hover:bg-gold-dark transition-colors"
-            >
-              Prendre RDV
             </a>
           </div>
         </div>
@@ -85,26 +78,25 @@ export default function Navigation() {
           </div>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — submenu uses CSS group-hover, no JS state */}
         <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
-            <li
-              key={link.href}
-              className="relative"
-              onMouseEnter={() => link.submenu && setActiveSubmenu(link.label)}
-              onMouseLeave={() => setActiveSubmenu(null)}
-            >
+            <li key={link.href} className="relative group">
               <Link
                 href={link.href}
-                className="flex items-center gap-1 px-3 py-2 text-sm text-navy hover:text-gold transition-colors font-medium"
+                className="flex items-center gap-1 px-3 py-2 text-sm text-navy group-hover:text-gold transition-colors font-medium"
               >
                 {link.label}
                 {link.submenu && (
-                  <ChevronDown size={13} className="opacity-50 mt-px" />
+                  <ChevronDown
+                    size={13}
+                    className="opacity-50 mt-px transition-transform duration-200 group-hover:rotate-180"
+                  />
                 )}
               </Link>
-              {link.submenu && activeSubmenu === link.label && (
-                <div className="absolute top-full left-0 min-w-[220px] bg-white shadow-xl border-t-2 border-gold py-2 z-50">
+
+              {link.submenu && (
+                <div className="absolute top-full left-0 min-w-[220px] bg-white shadow-xl border-t-2 border-gold py-2 z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150 pointer-events-none group-hover:pointer-events-auto">
                   {link.submenu.map((sub) => (
                     <Link
                       key={sub.href}
@@ -145,26 +137,54 @@ export default function Navigation() {
           <div className="container-site py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <div key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block py-3 px-2 text-navy font-medium border-b border-gray-50 hover:text-gold transition-colors"
-                >
-                  {link.label}
-                </Link>
-                {link.submenu && (
-                  <div className="pl-4 pb-1">
-                    {link.submenu.map((sub) => (
-                      <Link
-                        key={sub.href}
-                        href={sub.href}
-                        onClick={() => setIsOpen(false)}
-                        className="block py-2 px-2 text-sm text-muted hover:text-gold transition-colors"
-                      >
-                        {sub.label}
-                      </Link>
-                    ))}
-                  </div>
+                {link.submenu ? (
+                  <>
+                    <button
+                      onClick={() =>
+                        setMobileSubmenuOpen(
+                          mobileSubmenuOpen === link.label ? null : link.label
+                        )
+                      }
+                      className="w-full flex items-center justify-between py-3 px-2 text-navy font-medium border-b border-gray-50 hover:text-gold transition-colors"
+                    >
+                      {link.label}
+                      <ChevronDown
+                        size={14}
+                        className={`transition-transform duration-200 ${
+                          mobileSubmenuOpen === link.label ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {mobileSubmenuOpen === link.label && (
+                      <div className="pl-4 py-1 bg-ivory">
+                        <Link
+                          href={link.href}
+                          onClick={() => { setIsOpen(false); setMobileSubmenuOpen(null); }}
+                          className="block py-2 px-2 text-sm text-navy font-medium hover:text-gold transition-colors"
+                        >
+                          Tous les soins
+                        </Link>
+                        {link.submenu.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={() => { setIsOpen(false); setMobileSubmenuOpen(null); }}
+                            className="block py-2 px-2 text-sm text-muted hover:text-gold transition-colors"
+                          >
+                            {sub.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block py-3 px-2 text-navy font-medium border-b border-gray-50 hover:text-gold transition-colors"
+                  >
+                    {link.label}
+                  </Link>
                 )}
               </div>
             ))}

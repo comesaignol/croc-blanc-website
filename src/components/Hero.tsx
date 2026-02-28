@@ -74,7 +74,7 @@ export default function Hero() {
               { icon: Award, text: "Certifié HAS" },
               { icon: Star, text: "Noté 4.9/5" },
             ].map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-2 bg-white/8 border border-white/12 px-3 py-2">
+              <div key={text} className="flex items-center gap-2 bg-white/10 border border-white/10 px-3 py-2">
                 <Icon size={14} className="text-gold" />
                 <span className="text-white/80 text-xs font-medium">{text}</span>
               </div>
@@ -98,7 +98,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap gap-10 pt-8 border-t border-white/12">
+          <div className="flex flex-wrap gap-10 pt-8 border-t border-white/10">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <p className="font-serif text-3xl text-gold font-semibold">{stat.value}</p>

@@ -64,7 +64,7 @@ export default function TechnologiesPage() {
             }`}
           >
             <div className={i % 2 === 1 ? "lg:col-start-2" : ""}>
-              <p className="text-gold text-xs font-semibold tracking-[0.3em] uppercase mb-3">
+              <p className="section-label">
                 Équipement {String(i + 1).padStart(2, "0")}
               </p>
               <h2 className="font-serif text-3xl text-navy mb-4">{tech.title}</h2>

@@ -147,7 +147,7 @@ const articles: Record<string, {
       },
       {
         heading: "Dent cassée",
-        content: "Conservez le fragment dans du lait ou du sérum physiologique (jamais dans l'eau). Evitez de manger du côté blessé. Consultez dans les 24-48h — une remise en place ou reconstitution immédiate est parfois possible.",
+        content: "Conservez le fragment dans du lait ou du sérum physiologique (jamais dans l'eau). Évitez de manger du côté blessé. Consultez dans les 24-48h — une remise en place ou reconstitution immédiate est parfois possible.",
       },
       {
         heading: "Dent expulsée (avulsion)",
@@ -303,7 +303,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 href="https://www.doctolib.fr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold w-full justify-center text-center block"
+                className="btn-gold w-full justify-center"
               >
                 Prendre RDV
               </a>

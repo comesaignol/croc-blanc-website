@@ -44,7 +44,7 @@ export default function Values() {
               key={value.title}
               className="bg-white p-8 group hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border-b-2 border-transparent hover:border-gold"
             >
-              <div className="w-12 h-12 bg-navy/8 flex items-center justify-center mb-6 group-hover:bg-gold/12 transition-colors">
+              <div className="w-12 h-12 bg-navy/10 flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
                 <value.icon size={22} className="text-navy group-hover:text-gold transition-colors" />
               </div>
               <h3 className="font-serif text-lg text-navy mb-3">{value.title}</h3>

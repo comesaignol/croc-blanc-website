@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const soinsLinks = [
   { label: "Implantologie", href: "/soins/implantologie" },
@@ -8,6 +8,7 @@ const soinsLinks = [
   { label: "Esthétique dentaire", href: "/soins/esthetique" },
   { label: "Chirurgie buccale", href: "/soins/chirurgie" },
   { label: "Soins conservateurs", href: "/soins/conservateurs" },
+  { label: "Parodontologie", href: "/soins/parodontologie" },
 ];
 
 export default function Footer() {
@@ -58,22 +59,6 @@ export default function Footer() {
             Des soins dentaires d&apos;excellence dans un environnement moderne
             et chaleureux, pour toute la famille.
           </p>
-          <div className="flex items-center gap-2">
-            <a
-              href="#"
-              className="w-8 h-8 bg-white/10 flex items-center justify-center hover:bg-gold transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram size={14} />
-            </a>
-            <a
-              href="#"
-              className="w-8 h-8 bg-white/10 flex items-center justify-center hover:bg-gold transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook size={14} />
-            </a>
-          </div>
         </div>
 
         {/* Soins */}
@@ -106,7 +91,7 @@ export default function Footer() {
               { label: "Technologies", href: "/technologies" },
               { label: "Conseils & Blog", href: "/conseils" },
               { label: "Contact", href: "/contact" },
-              { label: "Urgences dentaires", href: "/contact" },
+              { label: "Urgences dentaires", href: "/contact#urgences" },
             ].map((link) => (
               <li key={link.href}>
                 <Link
@@ -147,7 +132,8 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <Clock size={14} className="text-gold shrink-0 mt-0.5" />
               <div className="text-sm text-white/50">
-                <p>Lun – Ven : 8h30 – 19h00</p>
+                <p>Lun – Jeu : 8h30 – 19h00</p>
+                <p>Ven : 8h30 – 18h00</p>
                 <p>Sam : 9h00 – 13h00</p>
               </div>
             </li>
@@ -156,7 +142,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-white/8">
+      <div className="border-t border-white/10">
         <div className="container-site py-5 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-white/30">
           <p>© {new Date().getFullYear()} Cabinet Dentaire Le Croc Blanc. Tous droits réservés.</p>
           <div className="flex items-center gap-5">

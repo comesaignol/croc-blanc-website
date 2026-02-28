@@ -125,9 +125,9 @@ export default function ConseilsPage() {
                     {article.readTime}
                   </span>
                 </div>
-                <h2 className="font-serif text-navy text-lg leading-snug mb-3 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-navy text-lg leading-snug mb-3 group-hover:text-gold transition-colors">
                   {article.title}
-                </h2>
+                </h3>
                 <p className="text-muted text-sm leading-relaxed line-clamp-2">{article.excerpt}</p>
                 <div className="mt-4 flex items-center gap-1.5 text-gold text-xs font-medium group-hover:gap-3 transition-all">
                   <span>Lire l&apos;article</span>

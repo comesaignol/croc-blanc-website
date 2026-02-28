@@ -60,7 +60,8 @@ export default function ContactMap() {
                   <p className="text-white/50 text-xs tracking-wide uppercase mb-3">Horaires d&apos;ouverture</p>
                   <div className="flex flex-col gap-1.5 text-sm">
                     {[
-                      { day: "Lundi – Vendredi", hours: "8h30 – 19h00" },
+                      { day: "Lundi – Jeudi", hours: "8h30 – 19h00" },
+                      { day: "Vendredi", hours: "8h30 – 18h00" },
                       { day: "Samedi", hours: "9h00 – 13h00" },
                       { day: "Dimanche", hours: "Fermé" },
                     ].map(({ day, hours }) => (

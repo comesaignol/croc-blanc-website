@@ -68,7 +68,7 @@ export default function ChirurgiePage() {
             { icon: CheckCircle2, title: "Suivi post-opératoire", desc: "Compte-rendu écrit, ordonnances préparées, joignabilité 24h après l'intervention." },
           ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="bg-ivory p-6 flex items-start gap-4">
-              <div className="w-10 h-10 bg-navy/8 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 bg-navy/10 flex items-center justify-center shrink-0">
                 <Icon size={18} className="text-gold" />
               </div>
               <div>

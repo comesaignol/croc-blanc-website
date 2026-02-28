@@ -56,7 +56,7 @@ export default function Journey() {
                   <div className="absolute top-0 right-0 w-4 h-4 bg-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="text-center">
-                  <div className="inline-block bg-gold/12 text-gold text-[10px] font-semibold tracking-widest uppercase px-2 py-0.5 mb-3">
+                  <div className="inline-block bg-gold/10 text-gold text-[10px] font-semibold tracking-widest uppercase px-2 py-0.5 mb-3">
                     {step.duration}
                   </div>
                   <h3 className="font-serif text-lg text-navy mb-3">{step.title}</h3>

@@ -15,7 +15,7 @@ export default function MentionsLegalesPage() {
         </div>
       </div>
       <div className="container-site max-w-3xl">
-        <div className="prose prose-navy flex flex-col gap-8">
+        <div className="flex flex-col gap-8">
           {[
             {
               title: "1. Éditeur du site",

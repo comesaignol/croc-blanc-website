@@ -15,7 +15,7 @@ No test suite is configured. Run `npm run build` to catch type errors and build 
 
 ## Architecture
 
-**Next.js 14 App Router** — all routes live under `src/app/`, all shared components under `src/components/`.
+**Next.js 15 App Router** (React 19) — all routes live under `src/app/`, all shared components under `src/components/`.
 
 ### Routing structure
 - `src/app/layout.tsx` — root layout wrapping every page with `<Navigation>` and `<Footer>`
@@ -37,6 +37,6 @@ Configured in both `next.config.mjs` (applied at runtime) and `vercel.json` (app
 
 ## Key conventions
 
-- `robots` is set to `noindex/nofollow` in `layout.tsx` metadata — remove before going live
+- `robots` is set to `noindex/nofollow` on `mentions-legales` and `politique-confidentialite` pages (correct). `public/robots.txt` now allows all crawlers — Sitemap URL must be updated to the real domain before going live
 - Placeholder contact info throughout (`04 XX XX XX XX`, `XX Rue [À compléter]`) must be replaced by the client
 - The project is in French; keep all user-facing copy in French

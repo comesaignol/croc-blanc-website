@@ -40,8 +40,8 @@ export default function Team() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {team.map((member) => (
-            <div key={member.name} className="group bg-white overflow-hidden hover:shadow-xl transition-all duration-500">
+          {team.map((member, i) => (
+            <div key={i} className="group bg-white overflow-hidden hover:shadow-xl transition-all duration-500">
               {/* Photo */}
               <div className="relative h-72 overflow-hidden">
                 <div

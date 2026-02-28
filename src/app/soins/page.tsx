@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Nos soins dentaires | Cabinet Dentaire Le Croc Blanc",
-  description: "Implantologie, orthodontie, dentisterie esthétique, chirurgie buccale et soins conservateurs. Découvrez l'ensemble de nos soins dentaires.",
+  description: "Implantologie, orthodontie, dentisterie esthétique, chirurgie buccale, soins conservateurs et parodontologie. Découvrez l'ensemble de nos soins dentaires.",
 };
 
 const soins = [
@@ -53,7 +53,7 @@ const soins = [
       },
       {
         title: "Parodontologie",
-        href: "/soins",
+        href: "/soins/parodontologie",
         description: "Traitement des maladies des gencives pour protéger vos dents sur le long terme.",
         image: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80",
       },

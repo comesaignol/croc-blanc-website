@@ -99,7 +99,7 @@ export default function ConservateursPage() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="font-serif text-navy text-base">{soin.title}</h3>
-                    <span className="bg-gold/12 text-gold text-[10px] font-semibold px-2 py-0.5 tracking-wider shrink-0">{soin.info}</span>
+                    <span className="bg-gold/10 text-gold text-[10px] font-semibold px-2 py-0.5 tracking-wider shrink-0">{soin.info}</span>
                   </div>
                   <p className="text-muted text-sm leading-relaxed">{soin.description}</p>
                 </div>

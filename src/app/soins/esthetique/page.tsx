@@ -17,7 +17,7 @@ const treatments = [
   },
   {
     title: "Composite direct",
-    description: "Résine composite modelée directement sur la dent pour corriger éclats, fractures, diastèmes ou ameliorer la forme. Résultat immédiat en une séance.",
+    description: "Résine composite modelée directement sur la dent pour corriger éclats, fractures, diastèmes ou améliorer la forme. Résultat immédiat en une séance.",
     image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80",
     duration: "1 séance",
     anesthesia: "Non nécessaire",
@@ -75,9 +75,9 @@ export default function EsthetiquePage() {
           {treatments.map((t, i) => (
             <div key={t.title} className={`grid lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
               <div className={i % 2 === 1 ? "lg:col-start-2" : ""}>
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-2 mb-4">
                   <Sparkles size={16} className="text-gold" />
-                  <span className="text-gold text-xs font-semibold tracking-widest uppercase">{t.title}</span>
+                  <span className="text-gold text-xs font-semibold tracking-widest uppercase">Traitement esthétique</span>
                 </div>
                 <h2 className="font-serif text-3xl text-navy mb-4">{t.title}</h2>
                 <div className="h-0.5 w-10 bg-gold mb-6" />

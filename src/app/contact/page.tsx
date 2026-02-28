@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -164,9 +165,9 @@ export default function ContactPage() {
                 <label htmlFor="rgpd" className="text-xs text-muted leading-relaxed">
                   En soumettant ce formulaire, j&apos;accepte que mes données soient traitées
                   dans le cadre de ma demande de contact, conformément à la{" "}
-                  <a href="/politique-confidentialite" className="text-gold underline">
+                  <Link href="/politique-confidentialite" className="text-gold underline">
                     politique de confidentialité
-                  </a>.
+                  </Link>.
                 </label>
               </div>
 
@@ -256,6 +257,19 @@ export default function ContactPage() {
               Réserver en ligne sur Doctolib
             </a>
           </div>
+        </div>
+
+        {/* Urgences dentaires */}
+        <div id="urgences" className="mt-16 bg-navy/5 border border-navy/10 p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="font-serif text-navy text-lg mb-1">Urgence dentaire ?</p>
+            <p className="text-muted text-sm">
+              Douleurs intenses, dent cassée, abcès — nous réservons des créneaux d&apos;urgence chaque jour.
+            </p>
+          </div>
+          <a href="tel:+33400000000" className="btn-primary shrink-0">
+            Appeler maintenant
+          </a>
         </div>
       </div>
     </div>
